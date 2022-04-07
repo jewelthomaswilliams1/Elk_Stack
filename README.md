@@ -2,13 +2,13 @@
 
 The files in this repository were used to configure the network depicted below.
 
-![TODO: Update the path with the name of your diagram](Images/diagram_filename.png)
-The files in this repository were used to configure the network depicted below.
+~/Elk_Stack/Diagram/12_ Cloud Security and Virtualization Homework-Page-1.drawio.png
 
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
 
-  - _TODO: Enter the playbook file._
+~/Elk_Stack/Ansible/Ansible YAML Scripts
+
 
 This document contains the following details:
 - Description of the Topology
@@ -42,13 +42,13 @@ The configuration details of each machine may be found below.
 
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
-| Name     			| Function  | IP Address								 | Operating System |
-|----------			|---------- |-------------------------	 |------------------|
+| Name     			| Function  | IP Address		 | Operating System |
+|------------------------------	|---------- |-------------------------	 |------------------|
 | Jump Box 			| Gateway   | 10.0.0.4 / 20.92.105.112	 | Linux            |
 | DVWA1    			| Webserver | 10.0.0.5 /20.213.34.71     | Linux            |
-| DVWA2    			| Webserver | 10.0.0.6/20.213.34.71  	   | Linux            |
+| DVWA2    			| Webserver | 10.0.0.6/20.213.34.71  	 | Linux            |
 | ELK-VM  			| Elk Server| 10.1.0.5 /Elk-UAE-VM-ip 	 | Linux            |
-| Load Balancer | Load Balancer          								 |									|
+| Load Balancer | Load Balancer |	    |
 
 
 ### Access Policies
@@ -57,26 +57,26 @@ The machines on the internal network are not exposed to the public Internet.
 
 Only the _local working_ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 
-- _TODO: Add whitelisted IP addresses_
-- 
 			- my local working machine's whitelisted IP address was: 
 						99.238.146.345
 
 Machines within the network can only be accessed by ssh through ansible using TCP port 5601.
 
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
-
 		- My local working machine  was able to access my ELK VM via my Jumpbox's Ansible docker container using TCP port 5601.  This was as follows:
 	
-			 Jump Box 			| Gateway   | 10.0.0.4 / 20.92.105.112	 | Linux 
+			 Jump Box | Gateway   | 10.0.0.4 / 20.92.105.11 | Linux 
 
 A summary of the access policies in place can be found in the table below.
 
-| Name     | Publicly Accessible | Allowed IP Addresses |
-|----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+
+
+| Name     			| Function  | IP Address		 | Operating System | Publically Accessible| Allowed IP Addresses|
+|------------------------------	|---------- |-------------------------	 |------------------|------------------ |------------------|
+| Jump Box 			| Gateway   | 10.0.0.4 / 20.92.105.112	 | Linux            |N 	                |
+| DVWA1    			| Webserver | 10.0.0.5 /20.213.34.71     | Linux            |N 	                |
+| DVWA2    			| Webserver | 10.0.0.6/20.213.34.71  	 | Linux            |N 	                |
+| ELK-VM  			| Elk Server| 10.1.0.5 /Elk-UAE-VM-ip 	 | Linux            |N                  |
+| Load Balancer | Load Balancer |	    |
 
 ### Elk Configuration
 
