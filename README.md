@@ -72,15 +72,16 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     			| Function  | IP Address		 | Operating System | Publically Accessible| Allowed IP Addresses|
 |------------------------------	|---------- |-------------------------	 |------------------|------------------ |------------------|
-| Jump Box 			| Gateway   | 10.0.0.4 / 20.92.105.112	 | Linux            |N 	                |
-| DVWA1    			| Webserver | 10.0.0.5 /20.213.34.71     | Linux            |N 	                |
-| DVWA2    			| Webserver | 10.0.0.6/20.213.34.71  	 | Linux            |N 	                |
-| ELK-VM  			| Elk Server| 10.1.0.5 /Elk-UAE-VM-ip 	 | Linux            |N                  |
-| Load Balancer | Load Balancer |	    |
+| Jump Box 			| Gateway   | 10.0.0.4 / 20.92.105.112	 | Linux            |N 	                |99.238.146.345 via SSH 22
+| DVWA1    			| Webserver | 10.0.0.5 /20.213.34.71     | Linux            |N 	                |10.0.0.4 via SSH 22
+| DVWA2    			| Webserver | 10.0.0.6/20.213.34.71  	 | Linux            |N 	                |10.0.0.4 vis SSH 22
+| ELK-VM  			| Elk Server| 10.1.0.5 /Elk-UAE-VM-ip 	 | Linux            |N                  |99.238.146.345 via TCP 5601
+| Load Balancer | Load Balancer |	    |				 |		    |			|99.238.146.345 via HTTP 80
 
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
+
 - _TODO: What is the main advantage of automating configuration with Ansible?_
 
 The playbook implements the following tasks:
