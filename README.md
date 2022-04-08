@@ -3,16 +3,7 @@
 The files in this repository were used to configure the network depicted below.
 
 
-![~/Elk_Stack/Diagram/12_ Cloud Security and Virtualization Homework-Page-1.drawio.png
-
-
-
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the config and  .yml file may be used to install only certain pieces of it, such as Filebeat.
-
-  - _TODO: ~/Elk_Stack/Ansible/Ansible YAML Scripts 
-=======
-~/Elk_Stack/Diagram/12_ Cloud Security and Virtualization Homework-Page-1.drawio.png
-
+![Cloud security and Virtualization Diagram] (https://github.com/jewelthomaswilliams1/Elk_Stack_Project/blob/main/Diagram/12_%20Cloud%20Security%20and%20Virtualization%20Homework-Page-1.drawio.png)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the yaml and config file may be used to install only certain pieces of it, such as Filebeat.
 
@@ -31,7 +22,6 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-<<<<<<< HEAD
 Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
 - _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
 
@@ -40,6 +30,9 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 - _TODO: What does Filebeat watch for?_
 - _TODO: What does Metricbeat record?_
 =======
+
+## Response ## 
+
 Load balancing ensures that the application will be highly _accessible_, in addition to restricting _access_ to the network.
 
 -  What aspect of security do load balancers protect? What is the advantage of a jump box?
@@ -54,7 +47,6 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 			
 		2. Metricbeat collects metric data from your target servers and systems. Metricbeat is part of the Elastic Stack, meaning it works seamlessly with Logstash, Elasticsearch, and Kibana. 
 
->>>>>>> 55bef8813678eb06e089ec7e47a03975daf358fc
 
 The configuration details of each machine may be found below.
 
@@ -66,7 +58,7 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 | DVWA1    			| Webserver | 10.0.0.5 /20.213.34.71     | Linux            |
 | DVWA2    			| Webserver | 10.0.0.6/20.213.34.71  	 | Linux            |
 | ELK-VM  			| Elk Server| 10.1.0.5 /Elk-UAE-VM-ip 	 | Linux            |
-| Load Balancer | Load Balancer |	    |
+| Load Balancer			|LB	    | HTTP : 80
 
 
 ### Access Policies
@@ -89,12 +81,12 @@ A summary of the access policies in place can be found in the table below.
 
 
 | Name     			| Function  | IP Address		 | Operating System | Publically Accessible| Allowed IP Addresses|
-|------------------------------	|---------- |-------------------------	 |------------------|------------------ |------------------|
+|------------------------------	|---------- |-------------------------	 |------------------|------------------ |------------------------|
 | Jump Box 			| Gateway   | 10.0.0.4 / 20.92.105.112	 | Linux            |N 	                |99.238.146.345 via SSH 22
 | DVWA1    			| Webserver | 10.0.0.5 /20.213.34.71     | Linux            |N 	                |10.0.0.4 via SSH 22
 | DVWA2    			| Webserver | 10.0.0.6/20.213.34.71  	 | Linux            |N 	                |10.0.0.4 vis SSH 22
 | ELK-VM  			| Elk Server| 10.1.0.5 /Elk-UAE-VM-ip 	 | Linux            |N                  |99.238.146.345 via TCP 5601
-| Load Balancer  		| LB	    |			 	 |		    |			|99.238.146.345 via HTTP 80
+| Load Balancer  		| LB	    |Redteam_LBR (Tcp/80)	 |		    |N			|99.238.146.345 via HTTP 80
 
 ### Elk Configuration
 
@@ -109,48 +101,12 @@ The playbook implements the following tasks:
 
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
 
-Using the following script the steps of the ELK installation play mean:
 
-Install Docker : The Docker engine, used for running containers
 
- name: Configure Elk VM with Docker
-  hosts: elk
-  remote_user: bijou
-  become: true
-  tasks:
-    # Use apt module
-    - name: Install docker.io
-      apt:
-        update_cache: yes
-        force_apt_get: yes
-        name: docker.io
-        state: present
-	
-Install python3-pip: Package used to install Python software
 
- # Use apt module
-    - name: Install python3-pip
-      apt:
-        force_apt_get: yes
-        name: python3-pip
-        state: present
+ 
 
-Launching and Exposing the container with these published ports:
- # Please list the ports that ELK runs on
-        published_ports:
-          -  5601:5601
-          -  9200:9200
-          -  5044:5044
 
-Download image
- # Use docker_container module
-    - name: download and launch a docker elk container
-      docker_container:
-        name: elk
-        image: sebp/elk:761
-        state: started
-        restart_policy: always
-        # Please list the ports that ELK runs on
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
