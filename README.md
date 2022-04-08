@@ -4,6 +4,8 @@ The files in this repository were used to configure the network depicted below.
 
 ![Cloud Virtualization Diagram](https://github.com/jewelthomaswilliams1/Elk_Stack_Project/tree/main/Diagram)
 
+
+
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the yaml and config file may be used to install only certain pieces of it, such as Filebeat.
 
 ![Ansible Playbooks and Configuration files](https://github.com/jewelthomaswilliams1/Elk_Stack_Project/tree/main/Ansible)
