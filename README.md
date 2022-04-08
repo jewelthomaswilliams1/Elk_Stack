@@ -5,14 +5,11 @@ The files in this repository were used to configure the network depicted below.
 ![Cloud Virtualization Diagram](https://github.com/jewelthomaswilliams1/Elk_Stack_Project/tree/main/Diagram)
 
 
-
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the yaml and config file may be used to install only certain pieces of it, such as Filebeat.
 
 ![Ansible Playbooks and Configuration files](https://github.com/jewelthomaswilliams1/Elk_Stack_Project/tree/main/Ansible)
 
 ![Filebeat Playbook Yaml](https://github.com/jewelthomaswilliams1/Elk_Stack_Project/blob/main/Ansible/filebeat-playbook.yml)
-
-
 
 This document contains the following details:
 - Description of the Topology
@@ -26,17 +23,7 @@ This document contains the following details:
 ### Description of the Topology
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
-
-Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
-
-
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
-- _TODO: What does Filebeat watch for?_
-- _TODO: What does Metricbeat record?_
 =======
-
-## Response ## 
 
 Load balancing ensures that the application will be highly _accessible_, in addition to restricting _access_ to the network.
 
@@ -44,7 +31,6 @@ Load balancing ensures that the application will be highly _accessible_, in addi
 
 		1. Load balancers protect availability, web traffic and web security 
 		2. The advantage of a jump box is that there is Network segmentation, access control, scalable security and all of this is automated.
-
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _data_ and system _logs_.
 
@@ -56,8 +42,6 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 
 
 The configuration details of each machine may be found below.
-
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 | Name     			| Function  | IP Address		 | Operating System |
 |------------------------------	|---------- |-------------------------	 |------------------|
@@ -79,9 +63,9 @@ Only the _local working_ machine can accept connections from the Internet. Acces
 
 Machines within the network can only be accessed by ssh through ansible using TCP port 5601.
 
-		- My local working machine  was able to access my ELK VM via my Jumpbox's Ansible docker container using TCP port 5601.  
+		- My local working machine  was able to access my ELK VM (via my Jumpbox's Ansible docker container) using TCP port 5601.  
 	
-			 Jump Box | Gateway   | 10.0.0.4 / 20.92.105.11 | Linux 
+			 Jump Box | Gateway   | 10.0.0.4  
 
 A summary of the access policies in place can be found in the table below.
 
@@ -95,32 +79,39 @@ A summary of the access policies in place can be found in the table below.
 | ELK-VM  			| Elk Server| 10.1.0.5 /Elk-UAE-VM-ip 	 | Linux            |N                  |99.238.146.345 via TCP 5601
 | Load Balancer  		| LB	    |Redteam_LBR (Tcp/80)	 |		    |N			|99.238.146.345 via HTTP 80
 
+
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
 
-	- The main advantages of automating configuration with Ansible is that it's agentless, customizable and flexible based based on specific clients' needs and does not require any further installation or other software or firewall ports on the systems that are being automated ( just a playbook). Furthermore it's very simple to set up and use and doesn't require any special coding skills.  Regardless of that fact it is very powerful and allows highly complex IT workflows to be set up. 
+	- The main advantages of automating configuration with Ansible is that it's agentless, customizable and flexible based based on specific clients' needs and does not require any further installation or other software or firewall ports on the systems that are being automated ( just a playbook). Furthermore it's very simple to set up and use and doesn't require any special coding skills.  Regardless of that fact however, it is very powerful and allows highly complex IT workflows to be set up. 
 
 
 The playbook implements the following tasks:
 
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-
 ![Elk Installation Playbook](https://github.com/jewelthomaswilliams1/Elk_Stack_Project/blob/main/Ansible/install_elk.yml)
 
+	1) Downloads and installs Docker on the ELK server ( and use more memory otherwise the Elk container will not run)
+	2) Configure it so that this setting is automatically run if your VM has been restarted.
+	3) Install the following apt packages:
+	
+		docker.io: The Docker engine, used for running containers.
+
+		python3-pip: Package used to install Python software.
+	
+	4) Install the following pip packages: 
+	
+		docker: Python client for Docker. Required by Ansbile to control the state of Docker containers
+
+	5) Configure the container to start with the following port mappings:
+
+				5601:5601, 9200:9200, 5044:5044
 
 
 
+## h3 The following screenshot displays the result of running docker ps after successfully configuring the ELK instance.
 
-
-
- 
-
-
-
-The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
-
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+![docker ps successful result screenshot](https://github.com/jewelthomaswilliams1/Elk_Stack_Project/blob/main/Diagram/Docker%20PS%20screenchot%20Elk%20Installation.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
