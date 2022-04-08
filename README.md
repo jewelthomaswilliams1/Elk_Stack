@@ -109,38 +109,49 @@ The playbook implements the following tasks:
 
 
 
-## h3 The following screenshot displays the result of running docker ps after successfully configuring the ELK instance.
+# The following screenshot displays the result of running docker ps after successfully configuring the ELK instance.
 
 ![docker ps successful result screenshot](https://github.com/jewelthomaswilliams1/Elk_Stack_Project/blob/main/Diagram/Docker%20PS%20screenchot%20Elk%20Installation.png)
 
 ### Target Machines & Beats
+
 This ELK server is configured to monitor the following machines:
-- _TODO: List the IP addresses of the machines you are monitoring_
 
 |DVWA1    	| 10.0.0.5     
 |DVWA2          | 10.0.0.6
 
 We have installed the following Beats on these machines:
-- _TODO: Specify which Beats you successfully installed_
 
-	I have succesfully installed  [link to ansible yml playbooks would be good here]
-	filebeat
-	metricbeat
+
+I have succesfully installed  
+
+[Filebeat Playbook Yaml](https://github.com/jewelthomaswilliams1/Elk_Stack_Project/blob/main/Ansible/filebeat-playbook.yml)
+[Metricbeat Playbook Yaml](https://github.com/jewelthomaswilliams1/Elk_Stack_Project/blob/main/Ansible/metricbeat-playbook.yml)
+
+	 - filebeat
+	 - metricbeat
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
 
-	filebeat: Logs
-	metricbeat: metrics and system statistics
+	-filebeat: Logs
+	 	I expect to see: linux logs information. This allows us to track things like user logon events, failed access attempts, service starts and stops
+	-metricbeat: metrics and system statistics
+		I expect to see: from the linux metric and system statistics gathered cpu usage, memory usage, drive space usage and drive space available for each 
+		of my target machines
 
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- Copy the ansible.cfg file to /etc/ansible.
+		
+- Update the host file to include the hosts that you would like to execute the playbook rules
+- Run the playbook, and navigate to your elk server using port 5601 to check that the installation worked as expected. 
+- 
+	Verify that you can access your server by navigating to http://[your.ELK-VM.External.IP]:5601/app/kibana. 
+	Using the public IP address of my new ELK VM
+	
 
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_
