@@ -151,6 +151,8 @@ SSH into the control node and follow the steps below:
 - 
 	Verify that you can access your server by navigating to http://[your.ELK-VM.External.IP]:5601/app/kibana. 
 	Using the public IP address of my new ELK VM
+## the result should look like this
+![Kibana Success screenshot]()
 	
 
 _TODO: Answer the following questions to fill in the blanks:_
