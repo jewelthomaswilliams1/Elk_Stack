@@ -2,7 +2,7 @@
 
 The files in this repository were used to configure the network depicted below.
 
-<<<<<<< HEAD
+
 ![~/Elk_Stack/Diagram/12_ Cloud Security and Virtualization Homework-Page-1.drawio.png
 
 
@@ -16,9 +16,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the yaml and config file may be used to install only certain pieces of it, such as Filebeat.
 
-[take this out ]~/Elk_Stack/Ansible/Ansible YAML Scripts 
-
->>>>>>> 55bef8813678eb06e089ec7e47a03975daf358fc
+![Ansible Playbooks and Configuration files] (https://github.com/jewelthomaswilliams1/Elk_Stack_Project/tree/main/Ansible)
 
 This document contains the following details:
 - Description of the Topology
