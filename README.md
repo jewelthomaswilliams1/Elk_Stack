@@ -8,6 +8,10 @@ These files have been tested and used to generate a live ELK deployment on Azure
 
 ![Ansible Playbooks and Configuration files](https://github.com/jewelthomaswilliams1/Elk_Stack_Project/tree/main/Ansible)
 
+![Filebeat Playbook Yaml](https://github.com/jewelthomaswilliams1/Elk_Stack_Project/blob/main/Ansible/filebeat-playbook.yml)
+
+
+
 This document contains the following details:
 - Description of the Topology
 - Access Policies
@@ -42,9 +46,11 @@ Load balancing ensures that the application will be highly _accessible_, in addi
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _data_ and system _logs_.
 
-		1. Filebeat looks for logs; audit logs, deprecation logs, gc logs, server logs, and slow logs.  It then forwards that information to Elasticsearch or Logstash. 
+		1. Filebeat looks for logs; audit logs, deprecation logs, gc logs, server logs, and slow logs.  
+		It then forwards that information to Elasticsearch or Logstash. 
 			
-		2. Metricbeat collects metric data from your target servers and systems. Metricbeat is part of the Elastic Stack, meaning it works seamlessly with Logstash, Elasticsearch, and Kibana. 
+		2. Metricbeat collects metric data from your target servers and systems. Metricbeat is part of the Elastic Stack,
+		meaning it works seamlessly with Logstash, Elasticsearch, and Kibana. 
 
 
 The configuration details of each machine may be found below.
@@ -71,7 +77,7 @@ Only the _local working_ machine can accept connections from the Internet. Acces
 
 Machines within the network can only be accessed by ssh through ansible using TCP port 5601.
 
-		- My local working machine  was able to access my ELK VM via my Jumpbox's Ansible docker container using TCP port 5601.  This was as follows:
+		- My local working machine  was able to access my ELK VM via my Jumpbox's Ansible docker container using TCP port 5601.  
 	
 			 Jump Box | Gateway   | 10.0.0.4 / 20.92.105.11 | Linux 
 
@@ -79,8 +85,8 @@ A summary of the access policies in place can be found in the table below.
 
 
 
-| Name     			| Function  | IP Address		 | Operating System | Publically Accessible| Allowed IP Addresses|
-|------------------------------	|---------- |-------------------------	 |------------------|------------------ |------------------------|
+| Name     			| Function  | IP Address		 | Operating System | Publically Accessible| Allowed IP Addresses |
+|------------------------------	|---------- |-------------------------	 |------------------|------------------ |-------------------------|
 | Jump Box 			| Gateway   | 10.0.0.4 / 20.92.105.112	 | Linux            |N 	                |99.238.146.345 via SSH 22
 | DVWA1    			| Webserver | 10.0.0.5 /20.213.34.71     | Linux            |N 	                |10.0.0.4 via SSH 22
 | DVWA2    			| Webserver | 10.0.0.6/20.213.34.71  	 | Linux            |N 	                |10.0.0.4 vis SSH 22
@@ -91,8 +97,6 @@ A summary of the access policies in place can be found in the table below.
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
 
-- _TODO: What is the main advantage of automating configuration with Ansible?_
-
 	- The main advantages of automating configuration with Ansible is that it's agentless, customizable and flexible based based on specific clients' needs and does not require any further installation or other software or firewall ports on the systems that are being automated ( just a playbook). Furthermore it's very simple to set up and use and doesn't require any special coding skills.  Regardless of that fact it is very powerful and allows highly complex IT workflows to be set up. 
 
 
@@ -100,7 +104,11 @@ The playbook implements the following tasks:
 
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
 
-https://github.com/jewelthomaswilliams1/Elk_Stack_Project/blob/main/Ansible/install_elk.yml
+![Elk Installation Playbook](https://github.com/jewelthomaswilliams1/Elk_Stack_Project/blob/main/Ansible/install_elk.yml)
+
+
+
+
 
 
 
