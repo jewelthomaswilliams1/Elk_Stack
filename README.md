@@ -37,7 +37,7 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 		1. Filebeat looks for logs; audit logs, deprecation logs, gc logs, server logs, and slow logs.  
 		It then forwards that information to Elasticsearch or Logstash. 
 			
-		2. Metricbeat collects metric data from your target servers and systems. Metricbeat is part of the Elastic Stack,
+		2. Metricbeat collects metric data from the target servers and systems. Metricbeat is part of the Elastic Stack,
 		meaning it works seamlessly with Logstash, Elasticsearch, and Kibana. 
 
 
@@ -105,7 +105,7 @@ The playbook implements the following tasks:
 
 	5) Configure the container to start with the following port mappings:
 
-				5601:5601, 9200:9200, 5044:5044
+		5601:5601, 9200:9200, 5044:5044
 
 
 
@@ -120,10 +120,10 @@ This ELK server is configured to monitor the following machines:
 |DVWA1    	| 10.0.0.5     
 |DVWA2          | 10.0.0.6
 
-We have installed the following Beats on these machines:
 
+## We have installed the following Beats on these machines:
 
-I have succesfully installed  
+ # I have succesfully installed  
 
 [Filebeat Playbook Yaml](https://github.com/jewelthomaswilliams1/Elk_Stack_Project/blob/main/Ansible/filebeat-playbook.yml)
 [Metricbeat Playbook Yaml](https://github.com/jewelthomaswilliams1/Elk_Stack_Project/blob/main/Ansible/metricbeat-playbook.yml)
@@ -141,6 +141,7 @@ These Beats allow us to collect the following information from each machine:
 
 
 ### Using the Playbook
+
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
