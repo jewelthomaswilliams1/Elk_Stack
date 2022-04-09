@@ -146,13 +146,14 @@ In order to use the playbook, you will need to have an Ansible control node alre
 SSH into the control node and follow the steps below:
 - Copy the ansible.cfg file to /etc/ansible.
 		
-- Update the host file to include the hosts that you would like to execute the playbook rules
+- Update the host file to include the specific machine in which Ansible should run the playbook as opposed to where the ELK server should be installed on.
 - Run the playbook, and navigate to your elk server using port 5601 to check that the installation worked as expected. 
 - 
-	Verify that you can access your server by navigating to http://[your.ELK-VM.External.IP]:5601/app/kibana. 
+	Verify that you can access your server by navigating to http://[my.ELK-VM.External.IP]:5601/app/kibana. 
 	Using the public IP address of my new ELK VM
 ## the result should look like this
-![Kibana Success screenshot]()
+![Kibana Success screenshot](https://github.com/jewelthomaswilliams1/Elk_Stack_Project/blob/main/Diagram/Kibana%20success%20config.png)
+![Kibana Success screenshot 2] (https://github.com/jewelthomaswilliams1/Elk_Stack_Project/blob/main/Diagram/Kibana%20successful%20configuration.png)
 	
 
 _TODO: Answer the following questions to fill in the blanks:_
